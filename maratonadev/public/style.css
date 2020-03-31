@@ -1,0 +1,175 @@
+ /* global */
+ * {
+     /* corrigindo comportamento padrão css para toda a página */
+    box-sizing: border-box;
+ }
+html, body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    /* flex-direction concerta a bagunça que o display-flex faz */
+    flex-direction: column;
+
+    height: 100vh;
+
+    /* fonte */
+    font-family: 'Roboto', sans-serif;
+
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #000000cc;
+}
+
+/* estrutura da página */
+ header, main, footer {
+     text-align: center;
+ }
+/* TITULOS */
+/* pegando em cascata o h1 do header */
+ header h1, main h2 {
+     margin-bottom: 70px;
+ }
+
+ main h2 span {
+     color: #ff4f4f;
+ }
+
+
+ .form h2 {
+     text-align: right;
+     color: #ffaadd;
+
+ }
+/* pegando em cascata o .donors do main*/
+ main .donors {
+     display: grid;
+     /* 1fr fraçoes da coluna e flexivel */
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+ }
+
+ footer {
+    margin-top: auto;
+    padding: 16px;
+
+    border: 1px solid #eeee
+}
+
+.blood {
+    color: #ff4f4f;
+    font-weight: bold;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    /* fazer a gotinha */
+    border-radius: 50%;
+    border-top-right-radius: 0;
+    /* rotaciona em -45 */
+    transform: rotate(-45);
+}
+
+.dornor p {
+    margin-top: 24px;
+    margin-bottom: 64px;
+    font-size: 14;
+}
+
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+}
+ .logo {
+     width: 150px;
+     margin: 70px 0;
+ }
+
+ hearde p {
+    font-size: 14;
+ }
+/* form */
+section.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+     
+    /* espaçamento via grid */
+    grid-gap: 45px;
+    align-items: center;
+    background-color: #ff4f4f;
+
+    padding: 16px 64px;
+
+    border-radius: 6px;
+ }
+
+ form input,
+ form button {
+    width: 100%;
+
+    margin-bottom: 4px;
+    /* padding espaçamento entre eles */
+    padding: 8px 16px;
+
+    /* bordas */
+    border-radius: 4px;
+    border: 1px #ffffff88 solid;
+ }
+
+ form input {
+     background-color: transparent;
+ }
+ form input::placeholder {
+     color: #ffffffaa;
+ }
+
+ form button {
+     font-weight: bold;
+ }
+
+ hearde, .form, main {
+     /* espaçamento com margin*/
+    margin: 0 auto 70px auto;
+
+    /* limites dos elementos na página*/
+    width: 90%;
+    max-width: 500px;
+ }
+
+ header button {
+     margin-top: 8px;
+     margin-bottom: 40px;
+     padding: 8px 16px;
+     border-radius: 4px;
+     border: none;
+
+     background-color: #ff4f4f;
+     color: white;
+
+     font-weight: bold;
+ }
+
+ /* funcionalidades com javascript */
+
+ /* transição com css */
+ section.form {
+     transition: all 300ms;
+ }
+ section.form.hide {
+     opacity: 0;
+     visibility: hidden;
+     height: 0;
+     margin-bottom: -70px;
+ }
+
